@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Game Store — Simulador de Compras Oficial</title>
+  <meta name="description" content="Elite Game Store: Loja gamer com simulação de compras e catálogo de periféricos de alta performance. Desenvolvido para o programa Trilhas.">
+  
+  <!-- Favicon com símbolo da marca -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+  
+  <!-- Fontes do Google: Orbitron para títulos gamer e Inter para texto ultra legível -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Estilos da Aplicação -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Principal com Navegação e Logotipo Oficial de 3 Linhas -->
+  <header class="header" id="cabecalho">
+    <div class="container header-container">
+      <a href="#inicio" class="logo-link" aria-label="Elite Game Store - Página Inicial">
+        <div class="logo-wrapper">
+          <img src="assets/logo-icon.svg" alt="" class="logo-badge" width="40" height="40" aria-hidden="true">
+          <div class="brand-logo" aria-label="ELITE GAME STORE">
+            <span class="logo-line-1">ELITE</span>
+            <span class="logo-line-2">GAME</span>
+            <span class="logo-line-3">STORE</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Botão Menu Mobile (Hambúrguer) -->
+      <button class="menu-toggle" id="btnMenuMobile" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menuNavegacao">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Navegação Principal -->
+      <nav class="nav-menu" id="menuNavegacao" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#inicio" class="nav-link">Início</a></li>
+          <li class="nav-item"><a href="#produtos" class="nav-link">Produtos</a></li>
+          <li class="nav-item"><a href="#como-funciona" class="nav-link">Como funciona</a></li>
+          <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+        </ul>
+        <!-- Barra de Pesquisa no Navbar -->
+        <div class="nav-search-wrapper" role="search">
+          <span class="nav-search-icon" aria-hidden="true">🔍</span>
+          <input type="search" id="navSearchInput" class="nav-search-input" placeholder="Buscar periféricos..." aria-label="Buscar produtos no catálogo" autocomplete="off">
+          <button type="button" id="btnLimparBusca" class="nav-search-clear" aria-label="Limpar pesquisa" title="Limpar pesquisa" style="display: none;">✕</button>
+        </div>
+
+        <div class="header-action">
+          <button type="button" class="btn btn-primary btn-sm btn-glow" id="btnHeaderSimular" data-screen="simular">
+            Simular compra
+          </button>
+          <button type="button" class="btn btn-outline btn-sm btn-glow" id="btnToggleTheme" title="Alternar modo noturno" aria-label="Alternar modo noturno">
+            🌓
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <!-- Seção Hero: Destaque Principal -->
+    <section class="hero-section" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-bg-glow" aria-hidden="true"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-tag">
+            <span class="pulse-dot"></span>
+            Simulador de Compras — Desafio 1 Trilhas
+          </div>
+          <h1 id="hero-title" class="hero-title">
+            Equipe-se para a vitória.
+          </h1>
+          <p class="hero-description">
+            Descubra acessórios gamer que combinam desempenho, precisão e estilo. Escolha seus produtos favoritos e experimente nossa simulação de compras.
+          </p>
+          <div class="hero-buttons">
+            <a href="#produtos" class="btn btn-outline" id="btnExplorarProdutos">
+              Explorar produtos
+            </a>
+            <button type="button" class="btn btn-primary btn-glow" id="btnHeroIrSimulacao" data-screen="simular" title="Simular compra" aria-label="Simular compra">
+              Simular compra
+            </button>
+          </div>
+
+          <!-- Indicador de Status da API Backend -->
+          <div class="api-status-badge" id="apiStatusBadge">
+            <span class="status-indicator status-connecting" id="apiStatusDot"></span>
+            <span id="apiStatusText">Verificando conexão com a API do servidor...</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-card-composite">
+            <div class="visual-circle-glow"></div>
+            <img src="assets/setup-gamer-hero.gif" alt="Battlestation gamer completa com iluminação RGB e periféricos da Elite Game Store" class="visual-img visual-main" onerror="this.onerror=null; this.src='assets/setup-gamer-hero.jpg';">
+            <div class="floating-badge badge-top">
+              <span class="badge-icon">⚡</span>
+              <span>Ultra Baixa Latência</span>
+            </div>
+            <div class="floating-badge badge-bottom">
+              <span class="badge-icon">🛡️</span>
+              <span>Cálculo Seguro no Servidor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catálogo de Produtos -->
+    <section class="section products-section" id="produtos" aria-labelledby="produtos-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Catálogo Oficial</span>
+          <h2 id="produtos-title" class="section-title">Periféricos de Elite</h2>
+          <p class="section-description">
+            Equipamentos de alto rendimento projetados para precisão absoluta e conforto contínuo em suas partidas.
+          </p>
+        </div>
+
+        <!-- Grade com os 3 Produtos Oficiais -->
+        <div class="products-grid" id="gridProdutos">
+          <!-- Produto 1: Headset Gamer Pulse -->
+          <article class="product-card" id="card-headset-pulse" data-id="headset-pulse">
+            <div class="product-image-container">
+              <img src="assets/headset-pulse.jpg" id="img-headset-pulse" alt="Headset Gamer Pulse com som imersivo e almofadas circum-aurais" class="product-img" loading="lazy" onerror="this.onerror=null; this.src='assets/headset-pulse.svg';">
+              <span class="product-tag">Áudio Gamer</span>
+            </div>
+            
+            <!-- Galeria de Fotos Reais do Produto -->
+            <div class="product-gallery-strip" aria-label="Galeria de fotos reais do Headset">
+              <span class="gallery-label">Fotos Reais:</span>
+              <div class="gallery-thumbs">
+                <button type="button" class="gallery-thumb-btn active" onclick="trocarFoto('headset-pulse', 'assets/headset-pulse.jpg', this)" onmouseover="trocarFoto('headset-pulse', 'assets/headset-pulse.jpg', this)" title="Ver foto frontal de estúdio" aria-label="Ver foto frontal do Headset">
+                  <img src="assets/headset-pulse.jpg" alt="Foto frontal">
+                  <span class="thumb-caption">Frontal</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn" onclick="trocarFoto('headset-pulse', 'assets/headset-detail.jpg', this)" onmouseover="trocarFoto('headset-pulse', 'assets/headset-detail.jpg', this)" title="Ver detalhe das almofadas e concha" aria-label="Ver detalhe do Headset">
+                  <img src="assets/headset-detail.jpg" alt="Foto detalhe">
+                  <span class="thumb-caption">Concha & Almofada</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-details">
+              <h3 class="product-name">Headset Gamer Pulse</h3>
+              <p class="product-description">Som imersivo e conforto para suas partidas.</p>
+              <div class="product-footer">
+                <div class="price-container">
+                  <span class="price-label">Preço oficial</span>
+                  <span class="product-price" id="preco-headset-pulse">R$&nbsp;199,90</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Headset Gamer Pulse">
+                  Simular
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 2: Mouse Gamer Velocity -->
+          <article class="product-card" id="card-mouse-velocity" data-id="mouse-velocity">
+            <div class="product-image-container">
+              <img src="assets/mouse-velocity.jpg" id="img-mouse-velocity" alt="Mouse Gamer Velocity com sensor de alta precisão e iluminação RGB" class="product-img" loading="lazy" onerror="this.onerror=null; this.src='assets/mouse-velocity.svg';">
+              <span class="product-tag">Periféricos</span>
+            </div>
+
+            <!-- Galeria de Fotos Reais do Produto -->
+            <div class="product-gallery-strip" aria-label="Galeria de fotos reais do Mouse">
+              <span class="gallery-label">Fotos Reais:</span>
+              <div class="gallery-thumbs">
+                <button type="button" class="gallery-thumb-btn active" onclick="trocarFoto('mouse-velocity', 'assets/mouse-velocity.jpg', this)" onmouseover="trocarFoto('mouse-velocity', 'assets/mouse-velocity.jpg', this)" title="Ver visão de estúdio" aria-label="Ver foto 3D do Mouse">
+                  <img src="assets/mouse-velocity.jpg" alt="Foto estúdio">
+                  <span class="thumb-caption">Ergonomia</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn" onclick="trocarFoto('mouse-velocity', 'assets/mouse-action.jpg', this)" onmouseover="trocarFoto('mouse-velocity', 'assets/mouse-action.jpg', this)" title="Ver sensor óptico em ação" aria-label="Ver sensor do Mouse">
+                  <img src="assets/mouse-action.jpg" alt="Foto de ação">
+                  <span class="thumb-caption">Sensor Óptico</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-details">
+              <h3 class="product-name">Mouse Gamer Velocity</h3>
+              <p class="product-description">Precisão e agilidade em cada movimento.</p>
+              <div class="product-footer">
+                <div class="price-container">
+                  <span class="price-label">Preço oficial</span>
+                  <span class="product-price" id="preco-mouse-velocity">R$&nbsp;129,90</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Mouse Gamer Velocity">
+                  Simular
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 3: Teclado Mecânico Phantom -->
+          <article class="product-card" id="card-teclado-phantom" data-id="teclado-phantom">
+            <div class="product-image-container">
+              <img src="assets/teclado-phantom.jpg" id="img-teclado-phantom" alt="Teclado Mecânico Phantom com teclas mecânicas e iluminação RGB" class="product-img" loading="lazy" onerror="this.onerror=null; this.src='assets/teclado-phantom.svg';">
+              <span class="product-tag">Teclados Mecânicos</span>
+            </div>
+
+            <!-- Galeria de Fotos Reais do Produto com 3 Fotos -->
+            <div class="product-gallery-strip" aria-label="Galeria de fotos reais do Teclado">
+              <span class="gallery-label">Fotos Reais:</span>
+              <div class="gallery-thumbs">
+                <button type="button" class="gallery-thumb-btn active" onclick="trocarFoto('teclado-phantom', 'assets/teclado-phantom.jpg', this)" onmouseover="trocarFoto('teclado-phantom', 'assets/teclado-phantom.jpg', this)" title="Ver foto no setup" aria-label="Ver foto na mesa">
+                  <img src="assets/teclado-phantom.jpg" alt="Foto na mesa">
+                  <span class="thumb-caption">Battlestation</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn" onclick="trocarFoto('teclado-phantom', 'assets/teclado-angle.jpg', this)" onmouseover="trocarFoto('teclado-phantom', 'assets/teclado-angle.jpg', this)" title="Ver apoio de pulso ergonômico" aria-label="Ver teclado com apoio">
+                  <img src="assets/teclado-angle.jpg" alt="Foto apoio">
+                  <span class="thumb-caption">Apoio Pulso</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn" onclick="trocarFoto('teclado-phantom', 'assets/teclado-macro.jpg', this)" onmouseover="trocarFoto('teclado-phantom', 'assets/teclado-macro.jpg', this)" title="Ver switches mecânicos em close" aria-label="Ver switches mecânicos">
+                  <img src="assets/teclado-macro.jpg" alt="Foto switches">
+                  <span class="thumb-caption">Switches RGB</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-details">
+              <h3 class="product-name">Teclado Mecânico Phantom</h3>
+              <p class="product-description">Desempenho e estilo para sua estação gamer.</p>
+              <div class="product-footer">
+                <div class="price-container">
+                  <span class="price-label">Preço oficial</span>
+                  <span class="product-price" id="preco-teclado-phantom">R$&nbsp;249,90</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Teclado Mecânico Phantom">
+                  Simular
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 4: Monitor Gamer Horizon -->
+          <article class="product-card" id="card-monitor-horizon" data-id="monitor-horizon">
+            <div class="product-image-container">
+              <img src="assets/monitor-curvo.jpg" id="img-monitor-horizon" alt="Monitor Gamer Curvo Horizon 240Hz com iluminação traseira" class="product-img" loading="lazy">
+              <span class="product-tag">Monitores</span>
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">Monitor Gamer Horizon 240Hz</h3>
+              <p class="product-description">Painel curvo ultra-rápido de 1ms e taxa de atualização de 240Hz.</p>
+              <div class="product-footer">
+                <div class="price-container">
+                  <span class="price-label">Preço oficial</span>
+                  <span class="product-price" id="preco-monitor-horizon">R$&nbsp;1.299,90</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Monitor Gamer Horizon">
+                  Simular
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 5: Mousepad Speed Goliath -->
+          <article class="product-card" id="card-mousepad-goliath" data-id="mousepad-goliath">
+            <div class="product-image-container">
+              <img src="assets/mousepad-rgb.jpg" id="img-mousepad-goliath" alt="Mousepad Speed Goliath XXL com bordas iluminadas RGB" class="product-img" loading="lazy">
+              <span class="product-tag">Acessórios</span>
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">Mousepad Speed Goliath XXL</h3>
+              <p class="product-description">Superfície de tecido micro-texturizado com bordas costuradas e LED RGB.</p>
+              <div class="product-footer">
+                <div class="price-container">
+                  <span class="price-label">Preço oficial</span>
+                  <span class="product-price" id="preco-mousepad-goliath">R$&nbsp;89,90</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Mousepad Speed Goliath">
+                  Simular
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 6: Microfone Condensador Streamer Pro -->
+          <article class="product-card" id="card-microfone-streamer" data-id="microfone-streamer">
+            <div class="product-image-container">
+              <img src="assets/microfone-gamer.jpg" id="img-microfone-streamer" alt="Microfone Gamer Streamer Pro com shock mount" class="product-img" loading="lazy">
+              <span class="product-tag">Áudio Gamer</span>
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">Microfone Condensador Streamer Pro</h3>
+              <p class="product-description">Captação cardioide cristalina com shock mount e filtro pop integrado.</p>
+              <div class="product-footer">
+                <div class="price-container">
+                  <span class="price-label">Preço oficial</span>
+                  <span class="product-price" id="preco-microfone-streamer">R$&nbsp;289,90</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Microfone Streamer">
+                  Simular
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 7: Controle Sem Fio Trigger Elite -->
+          <article class="product-card" id="card-controle-elite" data-id="controle-elite">
+            <div class="product-image-container">
+              <img src="assets/controle-gamer.jpg" id="img-controle-elite" alt="Controle Sem Fio Trigger Elite para eSports" class="product-img" loading="lazy">
+              <span class="product-tag">Controles</span>
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">Controle Sem Fio Trigger Elite</h3>
+              <p class="product-description">Gatilhos magnéticos de efeito Hall e ergonomia de competição.</p>
+              <div class="product-footer">
+                <div class="price-container">
+                  <span class="price-label">Preço oficial</span>
+                  <span class="product-price" id="preco-controle-elite">R$&nbsp;219,90</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Controle Trigger Elite">
+                  Simular
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vitrine de Detalhes e Engenharia dos Produtos com Fotos Reais -->
+    <section class="section tech-showcase-section" aria-labelledby="showcase-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Engenharia de Alto Padrão</span>
+          <h2 id="showcase-title" class="section-title">Construção e Precisão em Cada Detalhe</h2>
+          <p class="section-description">
+            Confira a qualidade real dos componentes que compõem os periféricos da Elite Game Store.
+          </p>
+        </div>
+
+        <div class="showcase-grid">
+          <!-- Item 1: Headset Macro -->
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="assets/headset-detail.jpg" alt="Acabamento das conchas com iluminação neon ciano e almofadas respiráveis" class="showcase-img" loading="lazy">
+            </div>
+            <div class="showcase-info">
+              <h3 class="showcase-name">Acústica Imersiva & Conforto Térmico</h3>
+              <p class="showcase-desc">Almofadas circum-aurais com espuma de memória respirável e anel luminoso em LED ciano de baixa emissão térmica.</p>
+            </div>
+          </div>
+
+          <!-- Item 2: Switches Teclado Macro -->
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="assets/teclado-macro.jpg" alt="Macro dos switches mecânicos do teclado com iluminação ciano" class="showcase-img" loading="lazy">
+            </div>
+            <div class="showcase-info">
+              <h3 class="showcase-name">Switches Mecânicos de Alta Resposta</h3>
+              <p class="showcase-desc">Atuação tátil instantânea, chassi em alumínio anodizado escovado e retroiluminação individual RGB por switch.</p>
+            </div>
+          </div>
+
+          <!-- Item 3: Sensor Mouse Action -->
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="assets/mouse-action.jpg" alt="Mouse Gamer em movimento sobre mousepad de baixa fricção" class="showcase-img" loading="lazy">
+            </div>
+            <div class="showcase-info">
+              <h3 class="showcase-name">Sensor Óptico de Rastreamento 1:1</h3>
+              <p class="showcase-desc">Aceleração zero, resposta ultra rápida de 1000Hz polling rate e pés em PTFE puro para deslize sem atrito.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mural de Fotos Reais: Equipamentos em Ação -->
+    <section class="section photo-gallery-section" aria-labelledby="mural-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Galeria da Comunidade & Estúdio</span>
+          <h2 id="mural-title" class="section-title">Equipamentos em Ação</h2>
+          <p class="section-description">
+            Veja nossos periféricos fotógrafados em ambientes reais de alta performance e estúdios profissionais.
+          </p>
+        </div>
+
+        <div class="mural-grid">
+          <!-- Foto 1: Setup Completo -->
+          <article class="mural-item">
+            <div class="mural-img-wrap">
+              <img src="assets/setup-gamer-hero.jpg" alt="Estação Gamer com monitor ultrawide e periféricos em estúdio" class="mural-img" loading="lazy">
+              <span class="mural-floating-tag">Battlestation Oficial</span>
+            </div>
+            <div class="mural-body">
+              <h3 class="mural-heading">Setup Completo Elite Game Store</h3>
+              <p class="mural-desc">
+                Estação de batalha gamer profissional montada para competições de alto rendimento. Apresenta monitor curvo de 240Hz com tempo de resposta de 1ms, periféricos mecânicos com sincronização RGB Chroma e ergonomia desenvolvida para sessões prolongadas de gameplay.
+              </p>
+              <div class="mural-specs">
+                <span class="mural-chip">🖥️ Curvo 240Hz 1ms</span>
+                <span class="mural-chip">🌈 Sincronia RGB</span>
+                <span class="mural-chip">⚡ Baixa Latência</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Foto 2: Teclado Mecânico RGB -->
+          <article class="mural-item">
+            <div class="mural-img-wrap">
+              <img src="assets/teclado-rgb-pro.jpg" alt="Teclado Gamer Mecânico com iluminação RGB" class="mural-img" loading="lazy">
+              <span class="mural-floating-tag">Teclados Mecânicos</span>
+            </div>
+            <div class="mural-body">
+              <h3 class="mural-heading">Switches Ópticos de Alta Velocidade</h3>
+              <p class="mural-desc">
+                Teclado mecânico com tecnologia de atuação por feixe de luz infravermelho de 1.2mm, eliminando o atraso de debounce. Construído com placa superior de alumínio aeronáutico, descanso ergonômico magnético de pulso e keycaps double-shot PBT indestrutíveis.
+              </p>
+              <div class="mural-specs">
+                <span class="mural-chip">⌨️ Atuação 1.2mm</span>
+                <span class="mural-chip">🛡️ PBT Double-Shot</span>
+                <span class="mural-chip">✨ Alumínio 5052</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Foto 3: Headset Gamer Wireless -->
+          <article class="mural-item">
+            <div class="mural-img-wrap">
+              <img src="assets/headset-wireless.jpg" alt="Headset Gamer Wireless de alta fidelidade sonora" class="mural-img" loading="lazy">
+              <span class="mural-floating-tag">Áudio Sem Fio</span>
+            </div>
+            <div class="mural-body">
+              <h3 class="mural-heading">Drivers de Neodímio 50mm & Áudio 7.1</h3>
+              <p class="mural-desc">
+                Headset wireless com transmissão sem perda de sinal em 2.4GHz e alcance de até 15 metros. Conta com almofadas de espuma viscoelástica respirável com isolamento passivo superior, bateria para até 32 horas e microfone cardioide retrátil com filtro antirruído.
+              </p>
+              <div class="mural-specs">
+                <span class="mural-chip">🔊 Drivers 50mm</span>
+                <span class="mural-chip">🔋 Bateria até 32h</span>
+                <span class="mural-chip">🎙️ Mic Cardioide</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Foto 4: Sensor Mouse Action -->
+          <article class="mural-item">
+            <div class="mural-img-wrap">
+              <img src="assets/mouse-action.jpg" alt="Sensor do Mouse Gamer em ação sobre mousepad" class="mural-img" loading="lazy">
+              <span class="mural-floating-tag">Precisão & Agilidade</span>
+            </div>
+            <div class="mural-body">
+              <h3 class="mural-heading">Sensor Óptico PixArt & Tracking 1:1</h3>
+              <p class="mural-desc">
+                Rastreamento óptico de precisão cirúrgica com aceleração zero e resolução ajustável de até 26.000 DPI. A estrutura ultraleve balanceada de 62g combinada com pés em 100% PTFE virgem proporciona movimentos rápidos e controle absoluto em jogos competitivos.
+              </p>
+              <div class="mural-specs">
+                <span class="mural-chip">🎯 PixArt 26K DPI</span>
+                <span class="mural-chip">⚡ 1000Hz Polling</span>
+                <span class="mural-chip">⚖️ Ultra Leve 62g</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Foto 5: Switches e Customização -->
+          <article class="mural-item">
+            <div class="mural-img-wrap">
+              <img src="assets/teclado-macro.jpg" alt="Macro dos switches mecânicos iluminados" class="mural-img" loading="lazy">
+              <span class="mural-floating-tag">Engenharia Mecânica</span>
+            </div>
+            <div class="mural-body">
+              <h3 class="mural-heading">Chassi em Alumínio & Hot-Swap Modular</h3>
+              <p class="mural-desc">
+                Visão detalhada da placa de circuito impresso com soquetes hot-swap universais compatíveis com switches de 3 e 5 pinos. Possui dupla camada de absorção sonora em silicone e espuma Poron entre a placa e o PCB, garantindo um som acústico sólido e encorpado.
+              </p>
+              <div class="mural-specs">
+                <span class="mural-chip">🔧 Hot-Swap 5-Pin</span>
+                <span class="mural-chip">🔇 Espuma Poron</span>
+                <span class="mural-chip">💎 Leds RGB SMD</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Como Funciona -->
+    <section class="section how-it-works-section" id="como-funciona" aria-labelledby="como-funciona-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Fluxo Transparente</span>
+          <h2 id="como-funciona-title" class="section-title">Como funciona</h2>
+          <p class="section-description">
+            Experimente um fluxo didático de e-commerce com validação integral e cálculos computados pelo servidor.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <!-- Etapa 1 -->
+          <div class="step-card">
+            <div class="step-number" aria-hidden="true">01</div>
+            <h3 class="step-title">Escolha os produtos</h3>
+            <p class="step-text">Navegue pelo catálogo e conheça nossos três periféricos oficiais.</p>
+          </div>
+
+          <!-- Etapa 2 -->
+          <div class="step-card">
+            <div class="step-number" aria-hidden="true">02</div>
+            <h3 class="step-title">Informe as quantidades</h3>
+            <p class="step-text">Ao iniciar a simulação, responda com números inteiros válidos para cada item desejado.</p>
+          </div>
+
+          <!-- Etapa 3 -->
+          <div class="step-card">
+            <div class="step-number" aria-hidden="true">03</div>
+            <h3 class="step-title">Confira o subtotal, o desconto e o total</h3>
+            <p class="step-text">A API REST calcula os subtotais e aplica 10% de desconto para compras acima de R$&nbsp;500,00.</p>
+          </div>
+        </div>
+
+        <!-- Aviso Acadêmico Obrigatório -->
+        <div class="academic-notice" role="note">
+          <span class="notice-icon" aria-hidden="true">ℹ️</span>
+          <p class="notice-text">
+            <strong>Aviso importante:</strong> Esta é uma simulação acadêmica. Nenhum pagamento real é realizado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Simulação -->
+    <section class="section simulation-section" id="simulacao" aria-labelledby="simulacao-title">
+      <div class="container">
+        <div class="simulation-box">
+          <div class="simulation-content">
+            <span class="section-subtitle">Simulador Interativo</span>
+            <h2 id="simulacao-title" class="section-title">Pronto para subir de nível?</h2>
+            <p class="simulation-description">
+              Clique no botão abaixo para abrir a janela do simulador. Escolha a quantidade de cada produto, acompanhe o subtotal em tempo real e finalize sua compra com valor final e desconto.
+            </p>
+            
+            <div class="discount-rule-card">
+              <span class="rule-badge">Regra de Desconto da Loja</span>
+              <p>Compras com <strong>subtotal a partir de R$&nbsp;500,00</strong> ganham automaticamente <strong>10% de desconto</strong> no valor total!</p>
+            </div>
+
+            <div class="simulation-action">
+              <button type="button" class="btn btn-primary btn-lg btn-glow" id="btnPrincipalSimular" data-screen="simular" title="Simular compra completa" aria-label="Simular compra">
+                Simular compra
+              </button>
+            </div>
+
+            <!-- Área de Resultados Dinâmicos no DOM (Complemento Visual ao alert()) -->
+            <div class="simulation-result-panel" id="painelResultado" style="display: none;" aria-live="polite">
+              <div class="result-header">
+                <h3 class="result-title">Último Demonstrativo de Compra</h3>
+                <span class="result-badge" id="resultStatusBadge">Processado com Sucesso</span>
+              </div>
+              <div class="result-body" id="resultBody"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Sobre o Projeto -->
+    <section class="section about-section" id="sobre" aria-labelledby="sobre-title">
+      <div class="container">
+        <div class="about-card">
+          <div class="about-header">
+            <h2 id="sobre-title" class="section-title">Sobre a Elite Game Store</h2>
+            <p class="section-description">
+              Projeto acadêmico desenvolvido no curso <strong>Técnico em Desenvolvimento de Sistemas</strong> pelo programa <strong>Trilhas</strong> (2026).
+            </p>
+          </div>
+          <div class="about-grid">
+            <div class="about-item">
+              <h4 class="about-item-title">Autor & Desenvolvedor</h4>
+              <p class="about-item-content">Luã Hayalla Oliveira Silva</p>
+            </div>
+            <div class="about-item">
+              <h4 class="about-item-title">Trilha & Atividade</h4>
+              <p class="about-item-content">Lógica de Programação com JavaScript — Desafio 1: Minha Loja</p>
+            </div>
+            <div class="about-item">
+              <h4 class="about-item-title">Arquitetura de Software</h4>
+              <p class="about-item-content">Front-end desacoplado em HTML5/CSS3/JS puro com Back-end Node.js/Express e API REST</p>
+            </div>
+            <div class="about-item">
+              <h4 class="about-item-title">Segurança nos Cálculos</h4>
+              <p class="about-item-content">Processamento financeiro no servidor em centavos inteiros contra manipulação de preços</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Oficial com Metadados Acadêmicos Obrigatórios -->
+  <footer class="footer" id="rodape">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <!-- Logotipo Oficial Obrigatório de Três Linhas no Rodapé -->
+          <div class="logo-wrapper">
+            <img src="assets/logo-icon.svg" alt="" class="logo-badge" width="36" height="36" aria-hidden="true">
+            <div class="brand-logo" aria-label="ELITE GAME STORE">
+              <span class="logo-line-1">ELITE</span>
+              <span class="logo-line-2">GAME</span>
+              <span class="logo-line-3">STORE</span>
+            </div>
+          </div>
+          <p class="footer-slogan">
+            “Equipe-se para a vitória. Jogue em outro nível.”
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <h4 class="footer-heading">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#como-funciona">Como funciona</a></li>
+            <li><a href="#simulacao">Simular compra</a></li>
+            <li><a href="#sobre">Sobre o projeto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-tech-group">
+          <h4 class="footer-heading">Tecnologias Utilizadas</h4>
+          <ul class="tech-tags">
+            <li>HTML5 Semântico</li>
+            <li>CSS3 Moderno</li>
+            <li>JavaScript Puro</li>
+            <li>Fetch API</li>
+            <li>Node.js</li>
+            <li>Express REST</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <div class="footer-academic-info">
+          <p><strong>Projeto desenvolvido por:</strong> Luã Hayalla Oliveira Silva</p>
+          <p>Técnico em Desenvolvimento de Sistemas — Trilhas | Trilha: Lógica de Programação com JavaScript</p>
+          <p>Desafio 1 — Minha Loja: Simulador de Compras | Ano acadêmico: 2026</p>
+        </div>
+        <p class="footer-copy">
+          &copy; 2026 Elite Game Store. Todos os direitos reservados. Aplicação educacional para fins didáticos.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Genérico: Simulador de Compras -->
+  <div id="genericModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2 id="modalTitle" class="modal-title"></h2>
+        <button type="button" class="modal-close" id="modalClose" aria-label="Fechar">&times;</button>
+      </header>
+      <section class="modal-body" id="modalBody">
+        <!-- Conteúdo dinâmico -->
+      </section>
+    </div>
+  </div>
+
+  <!-- Script Principal da Aplicação -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "elite-game-store-backend",
+  "version": "1.0.0",
+  "description": "API REST e regras de negócio para a Elite Game Store - Desafio 1 Trilhas 2026",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node test/simulacao.test.js"
+  },
+  "keywords": [
+    "trilhas",
+    "javascript",
+    "express",
+    "ecommerce",
+    "gamer"
+  ],
+  "author": "Luã Hayalla Oliveira Silva",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "stripe": "^23.0.1"
+  }
+}
