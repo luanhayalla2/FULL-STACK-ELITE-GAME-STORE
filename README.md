@@ -34,31 +34,136 @@
 
 ## 📸 Demonstração Visual e Telas do App
 
-### 1. Banner Principal com Battlestation Animada
-O Início da aplicação conta com animação contínua da estação gamer em alta performance, selos flutuantes de tecnologia e status de conexão com o servidor em tempo real:
+> Todas as telas abaixo são capturas reais da aplicação em funcionamento, com back-end Node.js ativo e API conectada.
 
-![Banner Principal com Battlestation Animada](screenshots/setup-gamer-hero.gif)
+---
+
+### 🎬 1. Hero Banner — Battlestation Animada em Loop
+
+A primeira impressão da loja: um **GIF animado em loop** da estação gamer de alta performance com efeitos de zoom suave, brilho pulsante e bordas RGB cíclicas. O banner exibe também **selos flutuantes** com tecnologias-chave e um **badge de status da API** com indicador de conexão em tempo real.
+
+![Banner Principal Animado](screenshots/setup-gamer-hero.gif)
+
+> 🔵 **Detalhes técnicos do GIF:** 40 frames · 900×480px · 80ms/frame · loop infinito · efeitos: zoom breathing, RGB border, brilho pulsante, partículas flutuantes e texto com fade-in/out.
+
+| Elemento Visual | Descrição |
+|:---|:---|
+| 🌀 Zoom Breathing | Efeito de zoom suave de 1.0× a 1.06× em loop contínuo |
+| 🌈 Bordas RGB | Cor da borda muda ciclicamente em espectro completo |
+| ✨ Partículas | 7 partículas flutuantes com opacidade e cor animadas |
+| 📛 Texto Overlay | Título "ELITE GAME STORE" com fade-in/out dourado |
+| ⚡ Badge Superior | Selo "Ultra Baixa Latência" flutuante no topo |
+| 🛡️ Badge Inferior | Selo "Cálculo Seguro no Servidor" flutuante na base |
 
 <br>
 
-### 2. Interface Principal & Catálogo de Produtos
-Layout moderno com paleta gamer, tipografia futurista (*Orbitron* e *Inter*), navegação fluida e suporte a temas:
+---
 
-![Interface Principal](screenshots/hero_banner_preview.png)
+### 🖥️ 2. Interface Principal — Hero Section & Navbar
+
+Tela inicial da aplicação mostrando o layout completo: **navbar fixa com busca integrada**, headline principal, botões de ação e o badge de status da API backend.
+
+![Interface Principal & Hero Section](screenshots/01_hero_section.png)
+
+| Componente | Funcionalidade |
+|:---|:---|
+| 🔝 Navbar Fixa | Sempre visível com logo, links de navegação, barra de pesquisa e botões de ação |
+| 🔍 Barra de Pesquisa | Input integrado no navbar com filtro em tempo real dos produtos |
+| 🌓 Botão Tema | Alterna entre Modo Noturno e Modo Claro com ícone dinâmico |
+| 🛒 Botão "Simular compra" | Abre o simulador com lista completa de produtos da loja |
+| 📡 Badge API Status | Indicador verde/amarelo/vermelho de conexão com o back-end |
+| 🎯 CTA "Explorar produtos" | Rolagem suave até a seção de catálogo |
 
 <br>
 
-### 3. Tela Interativa do Simulador de Compras
-Janela modal estilizada que exibe os produtos selecionados, controles de quantidade (`−` e `+`), cálculo de subtotal por item, regra de desconto de 10% e botão para finalizar a compra:
+---
 
-![Simulador de Compras](screenshots/modal_simulador_preview.png)
+### 🛍️ 3. Catálogo de Produtos com Cards Interativos
+
+Grade responsiva com **7 periféricos gamer** organizados em cards premium. Cada card exibe imagem em alta resolução, nome, descrição técnica, preço formatado em Real brasileiro e botões de ação individuais.
+
+![Catálogo de Produtos](screenshots/03_catalogo_produtos.png)
+
+| Elemento do Card | Descrição |
+|:---|:---|
+| 🖼️ Imagem do Produto | Foto real do periférico em alta qualidade com fallback automático |
+| 📋 Nome & Descrição | Título em tipografia Orbitron + descrição técnica completa |
+| 💰 Preço Oficial | Valor formatado em R$ via `Intl.NumberFormat('pt-BR')` |
+| 🔘 Botão "Simular" | Abre o modal focado neste produto específico com seletor de quantidade |
+| 🏷️ Badge de Categoria | Chip visual indicando a categoria (Áudio, Periféricos, Monitores, etc.) |
 
 <br>
 
-### 4. Galeria de Fotos Reais com Ficha Técnica
-Seção de estúdio e comunidade exibindo detalhes dos periféricos em ação, com especificações de engenharia e chips visuais:
+---
 
-![Galeria de Fotos Reais](screenshots/catalogo_oficial_fotos_reais.png)
+### ⚙️ 4. Seção do Simulador de Compras
+
+Seção dedicada ao simulador com explicação visual do fluxo de compra, destacando a arquitetura **Full Stack** (front-end → API REST → back-end Node.js):
+
+![Seção Simulador](screenshots/04_simulador_section.png)
+
+| Passo | Descrição |
+|:---|:---|
+| **1️⃣ Selecione** | Escolha o produto no catálogo ou abra o simulador completo |
+| **2️⃣ Quantity** | Ajuste a quantidade com os botões `−` e `+` no modal |
+| **3️⃣ Calcule** | O subtotal é calculado em tempo real; desconto de 10% acima de R$ 500 |
+| **4️⃣ Finalize** | Clique em "Finalizar Compra" para receber o extrato completo via `alert()` |
+
+<br>
+
+---
+
+### 🧾 5. Modal Interativo — Simulador de Compras
+
+Janela modal estilizada que abre ao clicar em qualquer botão "Simular compra". Exibe **lista completa de produtos**, controles de quantidade individuais, subtotais em tempo real e desconto automático:
+
+![Modal Simulador de Compras](screenshots/05_modal_simulador.png)
+
+> 💡 O modal pode ser aberto de **4 pontos diferentes** da página: header, hero, seção simulador e cards individuais de produtos.
+
+| Funcionalidade do Modal | Detalhe |
+|:---|:---|
+| 📦 Lista de Produtos | Todos os itens do catálogo ou o produto específico do card clicado |
+| ➕➖ Controle de Quantidade | Botões `−` e `+` com validação (mínimo 0, máximo 99) |
+| 💵 Subtotal em Tempo Real | Multiplicação `quantidade × preço` atualizada instantaneamente |
+| 🏷️ Desconto Automático | 10% aplicado e destacado em verde quando subtotal ≥ R$ 500,00 |
+| ✅ Finalizar Compra | Envia requisição `POST /api/compras/simular` ao back-end com os dados |
+| ❌ Fechar Modal | Botão `×` ou tecla `Escape` fecha o modal com animação suave |
+
+<br>
+
+---
+
+### 🖼️ 6. Galeria da Comunidade & Estúdio — Fotos em Alta Resolução
+
+Seção de estúdio com **equipamentos fotografados em ambientes reais** de alta performance. Cada periférico possui ficha técnica completa com chips de especificação:
+
+![Galeria de Fotos Reais & Ficha Técnica](screenshots/06_galeria_fotos.png)
+
+| Elemento da Galeria | Detalhe |
+|:---|:---|
+| 📷 Fotos de Estúdio | Imagens reais em alta resolução (headset, mouse, teclado, monitor) |
+| 🏷️ Chips de Spec | Especificações técnicas como "26K DPI", "240Hz 1ms", "32h Bateria" |
+| 📝 Ficha Técnica | Descrição de engenharia completa para cada periférico |
+| 🖱️ Hover Interativo | Efeito de zoom e overlay ao passar o mouse sobre cada foto |
+
+<br>
+
+---
+
+### 🌓 7. Modo Noturno & Modo Claro (Dark/Light Theme)
+
+Alternância instantânea de tema com transição suave de 0.3s em toda a paleta de cores, gradientes e superfícies. A preferência é salva no `localStorage`:
+
+![Galeria de Fotos](screenshots/catalogo_oficial_fotos_reais.png)
+
+| Aspecto | Modo Claro ☀️ | Modo Noturno 🌙 |
+|:---|:---|:---|
+| **Fundo** | `#f8fafc` — cinza claro | `#0a0a1a` — azul-escuro profundo |
+| **Cards** | Branco com sombra suave | Glassmorphism com backdrop-blur |
+| **Textos** | `#1e1e2e` escuro | `#e2e8f0` claro |
+| **Gradientes** | Tons pastel gamer | Púrpura e azul neon profundos |
+| **Persistência** | `localStorage.setItem('theme', 'light')` | `localStorage.setItem('theme', 'dark')` |
 
 ---
 
