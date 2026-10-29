@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elite Game Store — Simulador de Compras Oficial</title>
-  <meta name="description" content="Elite Game Store: Loja gamer com simulação de compras e catálogo de periféricos de alta performance. Desenvolvido para o programa Trilhas.">
-  
+  <meta name="description"
+    content="Elite Game Store: Loja gamer com simulação de compras e catálogo de periféricos de alta performance. Desenvolvido para o programa Trilhas.">
+
   <!-- Favicon com símbolo da marca -->
   <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
-  
+
   <!-- Fontes do Google: Orbitron para títulos gamer e Inter para texto ultra legível -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700;800;900&display=swap"
+    rel="stylesheet">
+
   <!-- Estilos da Aplicação -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!-- Header Principal com Navegação e Logotipo Oficial de 3 Linhas -->
   <header class="header" id="cabecalho">
@@ -33,7 +38,8 @@
       </a>
 
       <!-- Botão Menu Mobile (Hambúrguer) -->
-      <button class="menu-toggle" id="btnMenuMobile" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menuNavegacao">
+      <button class="menu-toggle" id="btnMenuMobile" aria-label="Abrir menu de navegação" aria-expanded="false"
+        aria-controls="menuNavegacao">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -50,15 +56,18 @@
         <!-- Barra de Pesquisa no Navbar -->
         <div class="nav-search-wrapper" role="search">
           <span class="nav-search-icon" aria-hidden="true">🔍</span>
-          <input type="search" id="navSearchInput" class="nav-search-input" placeholder="Buscar periféricos..." aria-label="Buscar produtos no catálogo" autocomplete="off">
-          <button type="button" id="btnLimparBusca" class="nav-search-clear" aria-label="Limpar pesquisa" title="Limpar pesquisa" style="display: none;">✕</button>
+          <input type="search" id="navSearchInput" class="nav-search-input" placeholder="Buscar periféricos..."
+            aria-label="Buscar produtos no catálogo" autocomplete="off">
+          <button type="button" id="btnLimparBusca" class="nav-search-clear" aria-label="Limpar pesquisa"
+            title="Limpar pesquisa" style="display: none;">✕</button>
         </div>
 
         <div class="header-action">
           <button type="button" class="btn btn-primary btn-sm btn-glow" id="btnHeaderSimular" data-screen="simular">
             Simular compra
           </button>
-          <button type="button" class="btn btn-outline btn-sm btn-glow" id="btnToggleTheme" title="Alternar modo noturno" aria-label="Alternar modo noturno">
+          <button type="button" class="btn btn-outline btn-sm btn-glow" id="btnToggleTheme"
+            title="Alternar modo noturno" aria-label="Alternar modo noturno">
             🌓
           </button>
         </div>
@@ -80,13 +89,15 @@
             Equipe-se para a vitória.
           </h1>
           <p class="hero-description">
-            Descubra acessórios gamer que combinam desempenho, precisão e estilo. Escolha seus produtos favoritos e experimente nossa simulação de compras.
+            Descubra acessórios gamer que combinam desempenho, precisão e estilo. Escolha seus produtos favoritos e
+            experimente nossa simulação de compras.
           </p>
           <div class="hero-buttons">
             <a href="#produtos" class="btn btn-outline" id="btnExplorarProdutos">
               Explorar produtos
             </a>
-            <button type="button" class="btn btn-primary btn-glow" id="btnHeroIrSimulacao" data-screen="simular" title="Simular compra" aria-label="Simular compra">
+            <button type="button" class="btn btn-primary btn-glow" id="btnHeroIrSimulacao" data-screen="simular"
+              title="Simular compra" aria-label="Simular compra">
               Simular compra
             </button>
           </div>
@@ -101,7 +112,10 @@
         <div class="hero-visual" aria-hidden="true">
           <div class="visual-card-composite">
             <div class="visual-circle-glow"></div>
-            <img src="assets/setup-gamer-hero.gif" alt="Battlestation gamer completa com iluminação RGB e periféricos da Elite Game Store" class="visual-img visual-main" onerror="this.onerror=null; this.src='assets/setup-gamer-hero.jpg';">
+            <img
+              src="assets/setup-gamer-hero.gif"
+              alt="Battlestation gamer completa com iluminação RGB e periféricos da Elite Game Store"
+              class="visual-img visual-main" onerror="this.onerror=null; this.src='assets/setup-gamer-hero.jpg';">
             <div class="floating-badge badge-top">
               <span class="badge-icon">⚡</span>
               <span>Ultra Baixa Latência</span>
@@ -131,19 +145,27 @@
           <!-- Produto 1: Headset Gamer Pulse -->
           <article class="product-card" id="card-headset-pulse" data-id="headset-pulse">
             <div class="product-image-container">
-              <img src="assets/headset-pulse.jpg" id="img-headset-pulse" alt="Headset Gamer Pulse com som imersivo e almofadas circum-aurais" class="product-img" loading="lazy" onerror="this.onerror=null; this.src='assets/headset-pulse.svg';">
+              <img src="assets/headset-pulse.jpg" id="img-headset-pulse"
+                alt="Headset Gamer Pulse com som imersivo e almofadas circum-aurais" class="product-img" loading="lazy"
+                onerror="this.onerror=null; this.src='assets/headset-pulse.svg';">
               <span class="product-tag">Áudio Gamer</span>
             </div>
-            
+
             <!-- Galeria de Fotos Reais do Produto -->
             <div class="product-gallery-strip" aria-label="Galeria de fotos reais do Headset">
               <span class="gallery-label">Fotos Reais:</span>
               <div class="gallery-thumbs">
-                <button type="button" class="gallery-thumb-btn active" onclick="trocarFoto('headset-pulse', 'assets/headset-pulse.jpg', this)" onmouseover="trocarFoto('headset-pulse', 'assets/headset-pulse.jpg', this)" title="Ver foto frontal de estúdio" aria-label="Ver foto frontal do Headset">
+                <button type="button" class="gallery-thumb-btn active"
+                  onclick="trocarFoto('headset-pulse', 'assets/headset-pulse.jpg', this)"
+                  onmouseover="trocarFoto('headset-pulse', 'assets/headset-pulse.jpg', this)"
+                  title="Ver foto frontal de estúdio" aria-label="Ver foto frontal do Headset">
                   <img src="assets/headset-pulse.jpg" alt="Foto frontal">
                   <span class="thumb-caption">Frontal</span>
                 </button>
-                <button type="button" class="gallery-thumb-btn" onclick="trocarFoto('headset-pulse', 'assets/headset-detail.jpg', this)" onmouseover="trocarFoto('headset-pulse', 'assets/headset-detail.jpg', this)" title="Ver detalhe das almofadas e concha" aria-label="Ver detalhe do Headset">
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('headset-pulse', 'assets/headset-detail.jpg', this)"
+                  onmouseover="trocarFoto('headset-pulse', 'assets/headset-detail.jpg', this)"
+                  title="Ver detalhe das almofadas e concha" aria-label="Ver detalhe do Headset">
                   <img src="assets/headset-detail.jpg" alt="Foto detalhe">
                   <span class="thumb-caption">Concha & Almofada</span>
                 </button>
@@ -158,7 +180,8 @@
                   <span class="price-label">Preço oficial</span>
                   <span class="product-price" id="preco-headset-pulse">R$&nbsp;199,90</span>
                 </div>
-                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Headset Gamer Pulse">
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular"
+                  title="Simular compra deste item" aria-label="Simular compra do Headset Gamer Pulse">
                   Simular
                 </button>
               </div>
@@ -168,7 +191,9 @@
           <!-- Produto 2: Mouse Gamer Velocity -->
           <article class="product-card" id="card-mouse-velocity" data-id="mouse-velocity">
             <div class="product-image-container">
-              <img src="assets/mouse-velocity.jpg" id="img-mouse-velocity" alt="Mouse Gamer Velocity com sensor de alta precisão e iluminação RGB" class="product-img" loading="lazy" onerror="this.onerror=null; this.src='assets/mouse-velocity.svg';">
+              <img src="assets/mouse-velocity.jpg" id="img-mouse-velocity"
+                alt="Mouse Gamer Velocity com sensor de alta precisão e iluminação RGB" class="product-img"
+                loading="lazy" onerror="this.onerror=null; this.src='assets/mouse-velocity.svg';">
               <span class="product-tag">Periféricos</span>
             </div>
 
@@ -176,11 +201,17 @@
             <div class="product-gallery-strip" aria-label="Galeria de fotos reais do Mouse">
               <span class="gallery-label">Fotos Reais:</span>
               <div class="gallery-thumbs">
-                <button type="button" class="gallery-thumb-btn active" onclick="trocarFoto('mouse-velocity', 'assets/mouse-velocity.jpg', this)" onmouseover="trocarFoto('mouse-velocity', 'assets/mouse-velocity.jpg', this)" title="Ver visão de estúdio" aria-label="Ver foto 3D do Mouse">
+                <button type="button" class="gallery-thumb-btn active"
+                  onclick="trocarFoto('mouse-velocity', 'assets/mouse-velocity.jpg', this)"
+                  onmouseover="trocarFoto('mouse-velocity', 'assets/mouse-velocity.jpg', this)"
+                  title="Ver visão de estúdio" aria-label="Ver foto 3D do Mouse">
                   <img src="assets/mouse-velocity.jpg" alt="Foto estúdio">
                   <span class="thumb-caption">Ergonomia</span>
                 </button>
-                <button type="button" class="gallery-thumb-btn" onclick="trocarFoto('mouse-velocity', 'assets/mouse-action.jpg', this)" onmouseover="trocarFoto('mouse-velocity', 'assets/mouse-action.jpg', this)" title="Ver sensor óptico em ação" aria-label="Ver sensor do Mouse">
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('mouse-velocity', 'assets/mouse-action.jpg', this)"
+                  onmouseover="trocarFoto('mouse-velocity', 'assets/mouse-action.jpg', this)"
+                  title="Ver sensor óptico em ação" aria-label="Ver sensor do Mouse">
                   <img src="assets/mouse-action.jpg" alt="Foto de ação">
                   <span class="thumb-caption">Sensor Óptico</span>
                 </button>
@@ -195,7 +226,8 @@
                   <span class="price-label">Preço oficial</span>
                   <span class="product-price" id="preco-mouse-velocity">R$&nbsp;129,90</span>
                 </div>
-                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Mouse Gamer Velocity">
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular"
+                  title="Simular compra deste item" aria-label="Simular compra do Mouse Gamer Velocity">
                   Simular
                 </button>
               </div>
@@ -205,7 +237,9 @@
           <!-- Produto 3: Teclado Mecânico Phantom -->
           <article class="product-card" id="card-teclado-phantom" data-id="teclado-phantom">
             <div class="product-image-container">
-              <img src="assets/teclado-phantom.jpg" id="img-teclado-phantom" alt="Teclado Mecânico Phantom com teclas mecânicas e iluminação RGB" class="product-img" loading="lazy" onerror="this.onerror=null; this.src='assets/teclado-phantom.svg';">
+              <img src="assets/teclado-phantom.jpg" id="img-teclado-phantom"
+                alt="Teclado Mecânico Phantom com teclas mecânicas e iluminação RGB" class="product-img" loading="lazy"
+                onerror="this.onerror=null; this.src='assets/teclado-phantom.svg';">
               <span class="product-tag">Teclados Mecânicos</span>
             </div>
 
@@ -213,15 +247,24 @@
             <div class="product-gallery-strip" aria-label="Galeria de fotos reais do Teclado">
               <span class="gallery-label">Fotos Reais:</span>
               <div class="gallery-thumbs">
-                <button type="button" class="gallery-thumb-btn active" onclick="trocarFoto('teclado-phantom', 'assets/teclado-phantom.jpg', this)" onmouseover="trocarFoto('teclado-phantom', 'assets/teclado-phantom.jpg', this)" title="Ver foto no setup" aria-label="Ver foto na mesa">
+                <button type="button" class="gallery-thumb-btn active"
+                  onclick="trocarFoto('teclado-phantom', 'assets/teclado-phantom.jpg', this)"
+                  onmouseover="trocarFoto('teclado-phantom', 'assets/teclado-phantom.jpg', this)"
+                  title="Ver foto no setup" aria-label="Ver foto na mesa">
                   <img src="assets/teclado-phantom.jpg" alt="Foto na mesa">
                   <span class="thumb-caption">Battlestation</span>
                 </button>
-                <button type="button" class="gallery-thumb-btn" onclick="trocarFoto('teclado-phantom', 'assets/teclado-angle.jpg', this)" onmouseover="trocarFoto('teclado-phantom', 'assets/teclado-angle.jpg', this)" title="Ver apoio de pulso ergonômico" aria-label="Ver teclado com apoio">
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('teclado-phantom', 'assets/teclado-angle.jpg', this)"
+                  onmouseover="trocarFoto('teclado-phantom', 'assets/teclado-angle.jpg', this)"
+                  title="Ver apoio de pulso ergonômico" aria-label="Ver teclado com apoio">
                   <img src="assets/teclado-angle.jpg" alt="Foto apoio">
                   <span class="thumb-caption">Apoio Pulso</span>
                 </button>
-                <button type="button" class="gallery-thumb-btn" onclick="trocarFoto('teclado-phantom', 'assets/teclado-macro.jpg', this)" onmouseover="trocarFoto('teclado-phantom', 'assets/teclado-macro.jpg', this)" title="Ver switches mecânicos em close" aria-label="Ver switches mecânicos">
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('teclado-phantom', 'assets/teclado-macro.jpg', this)"
+                  onmouseover="trocarFoto('teclado-phantom', 'assets/teclado-macro.jpg', this)"
+                  title="Ver switches mecânicos em close" aria-label="Ver switches mecânicos">
                   <img src="assets/teclado-macro.jpg" alt="Foto switches">
                   <span class="thumb-caption">Switches RGB</span>
                 </button>
@@ -236,7 +279,8 @@
                   <span class="price-label">Preço oficial</span>
                   <span class="product-price" id="preco-teclado-phantom">R$&nbsp;249,90</span>
                 </div>
-                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Teclado Mecânico Phantom">
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular"
+                  title="Simular compra deste item" aria-label="Simular compra do Teclado Mecânico Phantom">
                   Simular
                 </button>
               </div>
@@ -246,7 +290,8 @@
           <!-- Produto 4: Monitor Gamer Horizon -->
           <article class="product-card" id="card-monitor-horizon" data-id="monitor-horizon">
             <div class="product-image-container">
-              <img src="assets/monitor-curvo.jpg" id="img-monitor-horizon" alt="Monitor Gamer Curvo Horizon 240Hz com iluminação traseira" class="product-img" loading="lazy">
+              <img src="assets/monitor-curvo.jpg" id="img-monitor-horizon"
+                alt="Monitor Gamer Curvo Horizon 240Hz com iluminação traseira" class="product-img" loading="lazy">
               <span class="product-tag">Monitores</span>
             </div>
             <div class="product-details">
@@ -257,7 +302,8 @@
                   <span class="price-label">Preço oficial</span>
                   <span class="product-price" id="preco-monitor-horizon">R$&nbsp;1.299,90</span>
                 </div>
-                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Monitor Gamer Horizon">
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular"
+                  title="Simular compra deste item" aria-label="Simular compra do Monitor Gamer Horizon">
                   Simular
                 </button>
               </div>
@@ -267,7 +313,8 @@
           <!-- Produto 5: Mousepad Speed Goliath -->
           <article class="product-card" id="card-mousepad-goliath" data-id="mousepad-goliath">
             <div class="product-image-container">
-              <img src="assets/mousepad-rgb.jpg" id="img-mousepad-goliath" alt="Mousepad Speed Goliath XXL com bordas iluminadas RGB" class="product-img" loading="lazy">
+              <img src="assets/mousepad-rgb.jpg" id="img-mousepad-goliath"
+                alt="Mousepad Speed Goliath XXL com bordas iluminadas RGB" class="product-img" loading="lazy">
               <span class="product-tag">Acessórios</span>
             </div>
             <div class="product-details">
@@ -278,7 +325,8 @@
                   <span class="price-label">Preço oficial</span>
                   <span class="product-price" id="preco-mousepad-goliath">R$&nbsp;89,90</span>
                 </div>
-                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Mousepad Speed Goliath">
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular"
+                  title="Simular compra deste item" aria-label="Simular compra do Mousepad Speed Goliath">
                   Simular
                 </button>
               </div>
@@ -288,7 +336,8 @@
           <!-- Produto 6: Microfone Condensador Streamer Pro -->
           <article class="product-card" id="card-microfone-streamer" data-id="microfone-streamer">
             <div class="product-image-container">
-              <img src="assets/microfone-gamer.jpg" id="img-microfone-streamer" alt="Microfone Gamer Streamer Pro com shock mount" class="product-img" loading="lazy">
+              <img src="assets/microfone-gamer.jpg" id="img-microfone-streamer"
+                alt="Microfone Gamer Streamer Pro com shock mount" class="product-img" loading="lazy">
               <span class="product-tag">Áudio Gamer</span>
             </div>
             <div class="product-details">
@@ -299,7 +348,8 @@
                   <span class="price-label">Preço oficial</span>
                   <span class="product-price" id="preco-microfone-streamer">R$&nbsp;289,90</span>
                 </div>
-                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Microfone Streamer">
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular"
+                  title="Simular compra deste item" aria-label="Simular compra do Microfone Streamer">
                   Simular
                 </button>
               </div>
@@ -309,7 +359,8 @@
           <!-- Produto 7: Controle Sem Fio Trigger Elite -->
           <article class="product-card" id="card-controle-elite" data-id="controle-elite">
             <div class="product-image-container">
-              <img src="assets/controle-gamer.jpg" id="img-controle-elite" alt="Controle Sem Fio Trigger Elite para eSports" class="product-img" loading="lazy">
+              <img src="assets/controle-gamer.jpg" id="img-controle-elite"
+                alt="Controle Sem Fio Trigger Elite para eSports" class="product-img" loading="lazy">
               <span class="product-tag">Controles</span>
             </div>
             <div class="product-details">
@@ -320,7 +371,8 @@
                   <span class="price-label">Preço oficial</span>
                   <span class="product-price" id="preco-controle-elite">R$&nbsp;219,90</span>
                 </div>
-                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular" title="Simular compra deste item" aria-label="Simular compra do Controle Trigger Elite">
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular"
+                  title="Simular compra deste item" aria-label="Simular compra do Controle Trigger Elite">
                   Simular
                 </button>
               </div>
@@ -345,33 +397,40 @@
           <!-- Item 1: Headset Macro -->
           <div class="showcase-card">
             <div class="showcase-img-wrap">
-              <img src="assets/headset-detail.jpg" alt="Acabamento das conchas com iluminação neon ciano e almofadas respiráveis" class="showcase-img" loading="lazy">
+              <img src="assets/headset-detail.jpg"
+                alt="Acabamento das conchas com iluminação neon ciano e almofadas respiráveis" class="showcase-img"
+                loading="lazy">
             </div>
             <div class="showcase-info">
               <h3 class="showcase-name">Acústica Imersiva & Conforto Térmico</h3>
-              <p class="showcase-desc">Almofadas circum-aurais com espuma de memória respirável e anel luminoso em LED ciano de baixa emissão térmica.</p>
+              <p class="showcase-desc">Almofadas circum-aurais com espuma de memória respirável e anel luminoso em LED
+                ciano de baixa emissão térmica.</p>
             </div>
           </div>
 
           <!-- Item 2: Switches Teclado Macro -->
           <div class="showcase-card">
             <div class="showcase-img-wrap">
-              <img src="assets/teclado-macro.jpg" alt="Macro dos switches mecânicos do teclado com iluminação ciano" class="showcase-img" loading="lazy">
+              <img src="assets/teclado-macro.jpg" alt="Macro dos switches mecânicos do teclado com iluminação ciano"
+                class="showcase-img" loading="lazy">
             </div>
             <div class="showcase-info">
               <h3 class="showcase-name">Switches Mecânicos de Alta Resposta</h3>
-              <p class="showcase-desc">Atuação tátil instantânea, chassi em alumínio anodizado escovado e retroiluminação individual RGB por switch.</p>
+              <p class="showcase-desc">Atuação tátil instantânea, chassi em alumínio anodizado escovado e
+                retroiluminação individual RGB por switch.</p>
             </div>
           </div>
 
           <!-- Item 3: Sensor Mouse Action -->
           <div class="showcase-card">
             <div class="showcase-img-wrap">
-              <img src="assets/mouse-action.jpg" alt="Mouse Gamer em movimento sobre mousepad de baixa fricção" class="showcase-img" loading="lazy">
+              <img src="assets/mouse-action.jpg" alt="Mouse Gamer em movimento sobre mousepad de baixa fricção"
+                class="showcase-img" loading="lazy">
             </div>
             <div class="showcase-info">
               <h3 class="showcase-name">Sensor Óptico de Rastreamento 1:1</h3>
-              <p class="showcase-desc">Aceleração zero, resposta ultra rápida de 1000Hz polling rate e pés em PTFE puro para deslize sem atrito.</p>
+              <p class="showcase-desc">Aceleração zero, resposta ultra rápida de 1000Hz polling rate e pés em PTFE puro
+                para deslize sem atrito.</p>
             </div>
           </div>
         </div>
@@ -393,13 +452,16 @@
           <!-- Foto 1: Setup Completo -->
           <article class="mural-item">
             <div class="mural-img-wrap">
-              <img src="assets/setup-gamer-hero.jpg" alt="Estação Gamer com monitor ultrawide e periféricos em estúdio" class="mural-img" loading="lazy">
+              <img src="assets/setup-gamer-hero.jpg" alt="Estação Gamer com monitor ultrawide e periféricos em estúdio"
+                class="mural-img" loading="lazy">
               <span class="mural-floating-tag">Battlestation Oficial</span>
             </div>
             <div class="mural-body">
               <h3 class="mural-heading">Setup Completo Elite Game Store</h3>
               <p class="mural-desc">
-                Estação de batalha gamer profissional montada para competições de alto rendimento. Apresenta monitor curvo de 240Hz com tempo de resposta de 1ms, periféricos mecânicos com sincronização RGB Chroma e ergonomia desenvolvida para sessões prolongadas de gameplay.
+                Estação de batalha gamer profissional montada para competições de alto rendimento. Apresenta monitor
+                curvo de 240Hz com tempo de resposta de 1ms, periféricos mecânicos com sincronização RGB Chroma e
+                ergonomia desenvolvida para sessões prolongadas de gameplay.
               </p>
               <div class="mural-specs">
                 <span class="mural-chip">🖥️ Curvo 240Hz 1ms</span>
@@ -412,13 +474,16 @@
           <!-- Foto 2: Teclado Mecânico RGB -->
           <article class="mural-item">
             <div class="mural-img-wrap">
-              <img src="assets/teclado-rgb-pro.jpg" alt="Teclado Gamer Mecânico com iluminação RGB" class="mural-img" loading="lazy">
+              <img src="assets/teclado-rgb-pro.jpg" alt="Teclado Gamer Mecânico com iluminação RGB" class="mural-img"
+                loading="lazy">
               <span class="mural-floating-tag">Teclados Mecânicos</span>
             </div>
             <div class="mural-body">
               <h3 class="mural-heading">Switches Ópticos de Alta Velocidade</h3>
               <p class="mural-desc">
-                Teclado mecânico com tecnologia de atuação por feixe de luz infravermelho de 1.2mm, eliminando o atraso de debounce. Construído com placa superior de alumínio aeronáutico, descanso ergonômico magnético de pulso e keycaps double-shot PBT indestrutíveis.
+                Teclado mecânico com tecnologia de atuação por feixe de luz infravermelho de 1.2mm, eliminando o atraso
+                de debounce. Construído com placa superior de alumínio aeronáutico, descanso ergonômico magnético de
+                pulso e keycaps double-shot PBT indestrutíveis.
               </p>
               <div class="mural-specs">
                 <span class="mural-chip">⌨️ Atuação 1.2mm</span>
@@ -431,13 +496,16 @@
           <!-- Foto 3: Headset Gamer Wireless -->
           <article class="mural-item">
             <div class="mural-img-wrap">
-              <img src="assets/headset-wireless.jpg" alt="Headset Gamer Wireless de alta fidelidade sonora" class="mural-img" loading="lazy">
+              <img src="assets/headset-wireless.jpg" alt="Headset Gamer Wireless de alta fidelidade sonora"
+                class="mural-img" loading="lazy">
               <span class="mural-floating-tag">Áudio Sem Fio</span>
             </div>
             <div class="mural-body">
               <h3 class="mural-heading">Drivers de Neodímio 50mm & Áudio 7.1</h3>
               <p class="mural-desc">
-                Headset wireless com transmissão sem perda de sinal em 2.4GHz e alcance de até 15 metros. Conta com almofadas de espuma viscoelástica respirável com isolamento passivo superior, bateria para até 32 horas e microfone cardioide retrátil com filtro antirruído.
+                Headset wireless com transmissão sem perda de sinal em 2.4GHz e alcance de até 15 metros. Conta com
+                almofadas de espuma viscoelástica respirável com isolamento passivo superior, bateria para até 32 horas
+                e microfone cardioide retrátil com filtro antirruído.
               </p>
               <div class="mural-specs">
                 <span class="mural-chip">🔊 Drivers 50mm</span>
@@ -450,13 +518,16 @@
           <!-- Foto 4: Sensor Mouse Action -->
           <article class="mural-item">
             <div class="mural-img-wrap">
-              <img src="assets/mouse-action.jpg" alt="Sensor do Mouse Gamer em ação sobre mousepad" class="mural-img" loading="lazy">
+              <img src="assets/mouse-action.jpg" alt="Sensor do Mouse Gamer em ação sobre mousepad" class="mural-img"
+                loading="lazy">
               <span class="mural-floating-tag">Precisão & Agilidade</span>
             </div>
             <div class="mural-body">
               <h3 class="mural-heading">Sensor Óptico PixArt & Tracking 1:1</h3>
               <p class="mural-desc">
-                Rastreamento óptico de precisão cirúrgica com aceleração zero e resolução ajustável de até 26.000 DPI. A estrutura ultraleve balanceada de 62g combinada com pés em 100% PTFE virgem proporciona movimentos rápidos e controle absoluto em jogos competitivos.
+                Rastreamento óptico de precisão cirúrgica com aceleração zero e resolução ajustável de até 26.000 DPI. A
+                estrutura ultraleve balanceada de 62g combinada com pés em 100% PTFE virgem proporciona movimentos
+                rápidos e controle absoluto em jogos competitivos.
               </p>
               <div class="mural-specs">
                 <span class="mural-chip">🎯 PixArt 26K DPI</span>
@@ -469,13 +540,16 @@
           <!-- Foto 5: Switches e Customização -->
           <article class="mural-item">
             <div class="mural-img-wrap">
-              <img src="assets/teclado-macro.jpg" alt="Macro dos switches mecânicos iluminados" class="mural-img" loading="lazy">
+              <img src="assets/teclado-macro.jpg" alt="Macro dos switches mecânicos iluminados" class="mural-img"
+                loading="lazy">
               <span class="mural-floating-tag">Engenharia Mecânica</span>
             </div>
             <div class="mural-body">
               <h3 class="mural-heading">Chassi em Alumínio & Hot-Swap Modular</h3>
               <p class="mural-desc">
-                Visão detalhada da placa de circuito impresso com soquetes hot-swap universais compatíveis com switches de 3 e 5 pinos. Possui dupla camada de absorção sonora em silicone e espuma Poron entre a placa e o PCB, garantindo um som acústico sólido e encorpado.
+                Visão detalhada da placa de circuito impresso com soquetes hot-swap universais compatíveis com switches
+                de 3 e 5 pinos. Possui dupla camada de absorção sonora em silicone e espuma Poron entre a placa e o PCB,
+                garantindo um som acústico sólido e encorpado.
               </p>
               <div class="mural-specs">
                 <span class="mural-chip">🔧 Hot-Swap 5-Pin</span>
@@ -511,14 +585,16 @@
           <div class="step-card">
             <div class="step-number" aria-hidden="true">02</div>
             <h3 class="step-title">Informe as quantidades</h3>
-            <p class="step-text">Ao iniciar a simulação, responda com números inteiros válidos para cada item desejado.</p>
+            <p class="step-text">Ao iniciar a simulação, responda com números inteiros válidos para cada item desejado.
+            </p>
           </div>
 
           <!-- Etapa 3 -->
           <div class="step-card">
             <div class="step-number" aria-hidden="true">03</div>
             <h3 class="step-title">Confira o subtotal, o desconto e o total</h3>
-            <p class="step-text">A API REST calcula os subtotais e aplica 10% de desconto para compras acima de R$&nbsp;500,00.</p>
+            <p class="step-text">A API REST calcula os subtotais e aplica 10% de desconto para compras acima de
+              R$&nbsp;500,00.</p>
           </div>
         </div>
 
@@ -540,16 +616,19 @@
             <span class="section-subtitle">Simulador Interativo</span>
             <h2 id="simulacao-title" class="section-title">Pronto para subir de nível?</h2>
             <p class="simulation-description">
-              Clique no botão abaixo para abrir a janela do simulador. Escolha a quantidade de cada produto, acompanhe o subtotal em tempo real e finalize sua compra com valor final e desconto.
+              Clique no botão abaixo para abrir a janela do simulador. Escolha a quantidade de cada produto, acompanhe o
+              subtotal em tempo real e finalize sua compra com valor final e desconto.
             </p>
-            
+
             <div class="discount-rule-card">
               <span class="rule-badge">Regra de Desconto da Loja</span>
-              <p>Compras com <strong>subtotal a partir de R$&nbsp;500,00</strong> ganham automaticamente <strong>10% de desconto</strong> no valor total!</p>
+              <p>Compras com <strong>subtotal a partir de R$&nbsp;500,00</strong> ganham automaticamente <strong>10% de
+                  desconto</strong> no valor total!</p>
             </div>
 
             <div class="simulation-action">
-              <button type="button" class="btn btn-primary btn-lg btn-glow" id="btnPrincipalSimular" data-screen="simular" title="Simular compra completa" aria-label="Simular compra">
+              <button type="button" class="btn btn-primary btn-lg btn-glow" id="btnPrincipalSimular"
+                data-screen="simular" title="Simular compra completa" aria-label="Simular compra">
                 Simular compra
               </button>
             </div>
@@ -574,7 +653,8 @@
           <div class="about-header">
             <h2 id="sobre-title" class="section-title">Sobre a Elite Game Store</h2>
             <p class="section-description">
-              Projeto acadêmico desenvolvido no curso <strong>Técnico em Desenvolvimento de Sistemas</strong> pelo programa <strong>Trilhas</strong> (2026).
+              Projeto acadêmico desenvolvido no curso <strong>Técnico em Desenvolvimento de Sistemas</strong> pelo
+              programa <strong>Trilhas</strong> (2026).
             </p>
           </div>
           <div class="about-grid">
@@ -588,11 +668,13 @@
             </div>
             <div class="about-item">
               <h4 class="about-item-title">Arquitetura de Software</h4>
-              <p class="about-item-content">Front-end desacoplado em HTML5/CSS3/JS puro com Back-end Node.js/Express e API REST</p>
+              <p class="about-item-content">Front-end desacoplado em HTML5/CSS3/JS puro com Back-end Node.js/Express e
+                API REST</p>
             </div>
             <div class="about-item">
               <h4 class="about-item-title">Segurança nos Cálculos</h4>
-              <p class="about-item-content">Processamento financeiro no servidor em centavos inteiros contra manipulação de preços</p>
+              <p class="about-item-content">Processamento financeiro no servidor em centavos inteiros contra manipulação
+                de preços</p>
             </div>
           </div>
         </div>
@@ -674,4 +756,5 @@
   <!-- Script Principal da Aplicação -->
   <script src="script.js"></script>
 </body>
+
 </html>
