@@ -1,14 +1,18 @@
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 
 const router = express.Router();
 
-// Caminho absoluto para o arquivo JSON que armazena os pedidos
-const ordersFilePath = path.resolve('backend/data/orders.json');
+// Caminho para o arquivo JSON de pedidos (usa tmpdir em ambientes serverless como Vercel)
+const ordersFilePath = process.env.VERCEL
+  ? path.join(os.tmpdir(), 'orders.json')
+  : path.resolve('backend/data/orders.json');
 
 function lerPedidos() {
   try {
+    if (!fs.existsSync(ordersFilePath)) return [];
     const raw = fs.readFileSync(ordersFilePath, 'utf-8');
     return JSON.parse(raw);
   } catch (err) {
@@ -17,7 +21,13 @@ function lerPedidos() {
 }
 
 function gravarPedidos(pedidos) {
-  fs.writeFileSync(ordersFilePath, JSON.stringify(pedidos, null, 2), 'utf-8');
+  try {
+    const dir = path.dirname(ordersFilePath);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(ordersFilePath, JSON.stringify(pedidos, null, 2), 'utf-8');
+  } catch (err) {
+    console.warn('Não foi possível persistir pedidos em disco:', err.message);
+  }
 }
 
 // GET /api/pedidos – lista todos os pedidos

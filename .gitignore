@@ -2,6 +2,9 @@
 node_modules/
 package-lock.json
 
+# Vercel
+.vercel/
+
 # Arquivos de Ambiente e Segredos
 .env
 .env.local

@@ -25,12 +25,17 @@ function executarTeste(nome, fn) {
 }
 
 // Teste Catálogo: produtos oficiais
-executarTeste('Catálogo Oficial: deve conter os 3 produtos obrigatórios', () => {
+executarTeste('Catálogo Oficial: deve conter os produtos cadastrados (incluindo os 3 obrigatórios)', () => {
   const produtos = listarProdutos();
-  assert.equal(produtos.length, 3);
+  assert.ok(produtos.length >= 3);
+  assert.equal(produtos.length, 11);
   assert.ok(obterProdutoPorId('headset-pulse'));
   assert.ok(obterProdutoPorId('mouse-velocity'));
   assert.ok(obterProdutoPorId('teclado-phantom'));
+  assert.ok(obterProdutoPorId('pc-gamer-titan'));
+  assert.ok(obterProdutoPorId('notebook-gamer-helios'));
+  assert.ok(obterProdutoPorId('gpu-rtx-4090'));
+  assert.ok(obterProdutoPorId('volante-force-gt'));
 });
 
 // Teste A — Nenhum produto selecionado

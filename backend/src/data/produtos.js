@@ -70,6 +70,42 @@ export const PRODUTOS = [
     preco: 219.90,
     categoria: 'Controles',
     imagem: 'assets/controle-gamer.jpg'
+  },
+  {
+    id: 'pc-gamer-titan',
+    nome: 'PC Gamer Elite Titan RTX 4080',
+    descricao: 'Gabinete aquário com water cooler LCD, Intel Core i9 e 32GB DDR5.',
+    precoCentavos: 849990,
+    preco: 8499.90,
+    categoria: 'Computadores',
+    imagem: 'assets/pc-gamer.jpg'
+  },
+  {
+    id: 'notebook-gamer-helios',
+    nome: 'Notebook Gamer Predator Helios 16',
+    descricao: 'Tela QHD 240Hz, Core i7, RTX 4070 e teclado mecânico per-key RGB.',
+    precoCentavos: 729990,
+    preco: 7299.90,
+    categoria: 'Notebooks',
+    imagem: 'assets/notebook-gamer.jpg'
+  },
+  {
+    id: 'gpu-rtx-4090',
+    nome: 'Placa de Vídeo GeForce RTX 4090 OC 24GB',
+    descricao: 'Arquitetura Ada Lovelace, triplo fan axial com backplate de titânio.',
+    precoCentavos: 1299990,
+    preco: 12999.90,
+    categoria: 'Placas de Vídeo',
+    imagem: 'assets/gpu-rtx.jpg'
+  },
+  {
+    id: 'volante-force-gt',
+    nome: 'Volante Gamer Apex Force Feedback Pro + Pedais',
+    descricao: 'Direct Drive dual motor, aro em couro D-shape e 3 pedais metálicos load-cell.',
+    precoCentavos: 189990,
+    preco: 1899.90,
+    categoria: 'Volantes & Simuladores',
+    imagem: 'assets/volante-gamer.jpg'
   }
 ];
 

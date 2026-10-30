@@ -2,16 +2,25 @@ import express from 'express';
 import Stripe from 'stripe';
 import path from 'path';
 import fs from 'fs';
+import os from 'os';
 
 const router = express.Router();
 
 // Use Stripe test secret key (no real charge)
-const stripe = new Stripe('sk_test_51Hxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'); // replace with your test key
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_51Hxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
 
 // Helper to read orders (reuse same as pedidos route)
-const ordersFilePath = path.resolve('backend/data/orders.json');
+const ordersFilePath = process.env.VERCEL
+  ? path.join(os.tmpdir(), 'orders.json')
+  : path.resolve('backend/data/orders.json');
+
 function readOrders() {
-  try { return JSON.parse(fs.readFileSync(ordersFilePath, 'utf8')); } catch (_) { return []; }
+  try {
+    if (!fs.existsSync(ordersFilePath)) return [];
+    return JSON.parse(fs.readFileSync(ordersFilePath, 'utf8'));
+  } catch (_) {
+    return [];
+  }
 }
 
 // POST /api/pagamento/checkout -> creates a test Checkout Session for an order id
@@ -34,13 +43,16 @@ router.post('/checkout', async (req, res) => {
     },
     quantity: item.quantidade
   }));
+
+  const origin = req.headers.origin || (req.headers.host ? `${req.protocol || 'http'}://${req.headers.host}` : 'http://localhost:3002');
+
   try {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: 'http://localhost:3000/sucesso.html',
-      cancel_url: 'http://localhost:3000/cancelado.html'
+      success_url: `${origin}/sucesso.html`,
+      cancel_url: `${origin}/cancelado.html`
     });
     res.json({ success: true, url: session.url });
   } catch (e) {

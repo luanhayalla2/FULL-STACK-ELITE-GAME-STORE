@@ -13,8 +13,10 @@
  * - Intl.NumberFormat para formatação monetária em BRL
  */
 
-// URL base da API REST Node.js/Express
-const API_BASE_URL = 'http://localhost:3002/api';
+// URL base da API REST Node.js/Express (detecta ambiente local ou nuvem/Vercel dinamicamente)
+const API_BASE_URL = (window.location.protocol.startsWith('http') && window.location.port !== '3000' && window.location.port !== '5500')
+  ? '/api'
+  : 'http://localhost:3002/api';
 
 // Formatador oficial de moeda em Real Brasileiro (BRL)
 const formatadorMoeda = new Intl.NumberFormat('pt-BR', {
@@ -72,6 +74,34 @@ const CATALOGO_LOCAL_FALLBACK = [
     descricao: 'Gatilhos magnéticos de efeito Hall e ergonomia de competição.',
     preco: 219.90,
     imagem: 'assets/controle-gamer.jpg'
+  },
+  {
+    id: 'pc-gamer-titan',
+    nome: 'PC Gamer Elite Titan RTX 4080',
+    descricao: 'Gabinete aquário com water cooler LCD, Intel Core i9 e 32GB DDR5.',
+    preco: 8499.90,
+    imagem: 'assets/pc-gamer.jpg'
+  },
+  {
+    id: 'notebook-gamer-helios',
+    nome: 'Notebook Gamer Predator Helios 16',
+    descricao: 'Tela QHD 240Hz, Core i7, RTX 4070 e teclado mecânico per-key RGB.',
+    preco: 7299.90,
+    imagem: 'assets/notebook-gamer.jpg'
+  },
+  {
+    id: 'gpu-rtx-4090',
+    nome: 'Placa de Vídeo GeForce RTX 4090 OC 24GB',
+    descricao: 'Arquitetura Ada Lovelace, triplo fan axial com backplate de titânio.',
+    preco: 12999.90,
+    imagem: 'assets/gpu-rtx.jpg'
+  },
+  {
+    id: 'volante-force-gt',
+    nome: 'Volante Gamer Apex Force Feedback Pro + Pedais',
+    descricao: 'Direct Drive dual motor, aro em couro D-shape e 3 pedais metálicos load-cell.',
+    preco: 1899.90,
+    imagem: 'assets/volante-gamer.jpg'
   }
 ];
 
@@ -125,14 +155,18 @@ async function verificarStatusBackend() {
     if (resposta.ok) {
       backendDisponivel = true;
       if (dot) dot.className = 'status-indicator status-online';
-      if (text) text.textContent = 'Servidor API Online (localhost:3002)';
+      if (text) text.textContent = 'Servidor API Online';
     } else {
       throw new Error('Status inesperado');
     }
   } catch (erro) {
     backendDisponivel = false;
     if (dot) dot.className = 'status-indicator status-offline';
-    if (text) text.textContent = 'Servidor API Offline — Inicie o backend na porta 3002';
+    if (text) {
+      text.textContent = (window.location.protocol.startsWith('http') && window.location.hostname !== 'localhost')
+        ? 'Servidor API Indisponível'
+        : 'Servidor API Offline — Inicie o backend na porta 3002';
+    }
   }
 }
 

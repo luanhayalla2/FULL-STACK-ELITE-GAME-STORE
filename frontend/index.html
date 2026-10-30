@@ -169,6 +169,13 @@
                   <img src="assets/headset-detail.jpg" alt="Foto detalhe">
                   <span class="thumb-caption">Concha & Almofada</span>
                 </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('headset-pulse', 'assets/headset-wireless.jpg', this)"
+                  onmouseover="trocarFoto('headset-pulse', 'assets/headset-wireless.jpg', this)"
+                  title="Ver vista lateral wireless" aria-label="Ver headset wireless">
+                  <img src="assets/headset-wireless.jpg" alt="Foto wireless">
+                  <span class="thumb-caption">Wireless</span>
+                </button>
               </div>
             </div>
 
@@ -214,6 +221,13 @@
                   title="Ver sensor óptico em ação" aria-label="Ver sensor do Mouse">
                   <img src="assets/mouse-action.jpg" alt="Foto de ação">
                   <span class="thumb-caption">Sensor Óptico</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('mouse-velocity', 'assets/mouse-detail.jpg', this)"
+                  onmouseover="trocarFoto('mouse-velocity', 'assets/mouse-detail.jpg', this)"
+                  title="Ver scroll e botões DPI" aria-label="Ver detalhes do Mouse">
+                  <img src="assets/mouse-detail.jpg" alt="Foto scroll e botões">
+                  <span class="thumb-caption">Scroll & DPI</span>
                 </button>
               </div>
             </div>
@@ -294,6 +308,34 @@
                 alt="Monitor Gamer Curvo Horizon 240Hz com iluminação traseira" class="product-img" loading="lazy">
               <span class="product-tag">Monitores</span>
             </div>
+
+            <!-- Galeria de Fotos Reais do Produto -->
+            <div class="product-gallery-strip" aria-label="Galeria de fotos reais do Monitor">
+              <span class="gallery-label">Fotos Reais:</span>
+              <div class="gallery-thumbs">
+                <button type="button" class="gallery-thumb-btn active"
+                  onclick="trocarFoto('monitor-horizon', 'assets/monitor-curvo.jpg', this)"
+                  onmouseover="trocarFoto('monitor-horizon', 'assets/monitor-curvo.jpg', this)"
+                  title="Ver visão frontal do monitor curvo" aria-label="Ver monitor curvo frontal">
+                  <img src="assets/monitor-curvo.jpg" alt="Painel curvo 240Hz">
+                  <span class="thumb-caption">Painel 240Hz</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('monitor-horizon', 'assets/monitor-angle.jpg', this)"
+                  onmouseover="trocarFoto('monitor-horizon', 'assets/monitor-angle.jpg', this)"
+                  title="Ver curvatura lateral e bordas finas" aria-label="Ver curvatura lateral do monitor">
+                  <img src="assets/monitor-angle.jpg" alt="Curvatura e bordas">
+                  <span class="thumb-caption">Curvatura</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('monitor-horizon', 'assets/monitor-setup.jpg', this)"
+                  onmouseover="trocarFoto('monitor-horizon', 'assets/monitor-setup.jpg', this)"
+                  title="Ver monitor no setup gamer em ação" aria-label="Ver monitor no setup">
+                  <img src="assets/monitor-setup.jpg" alt="Monitor no setup">
+                  <span class="thumb-caption">Battlestation</span>
+                </button>
+              </div>
+            </div>
             <div class="product-details">
               <h3 class="product-name">Monitor Gamer Horizon 240Hz</h3>
               <p class="product-description">Painel curvo ultra-rápido de 1ms e taxa de atualização de 240Hz.</p>
@@ -316,6 +358,34 @@
               <img src="assets/mousepad-rgb.jpg" id="img-mousepad-goliath"
                 alt="Mousepad Speed Goliath XXL com bordas iluminadas RGB" class="product-img" loading="lazy">
               <span class="product-tag">Acessórios</span>
+            </div>
+
+            <!-- Galeria de Fotos Reais do Produto -->
+            <div class="product-gallery-strip" aria-label="Galeria de fotos reais do Mousepad">
+              <span class="gallery-label">Fotos Reais:</span>
+              <div class="gallery-thumbs">
+                <button type="button" class="gallery-thumb-btn active"
+                  onclick="trocarFoto('mousepad-goliath', 'assets/mousepad-rgb.jpg', this)"
+                  onmouseover="trocarFoto('mousepad-goliath', 'assets/mousepad-rgb.jpg', this)"
+                  title="Ver mousepad com iluminação RGB" aria-label="Ver mousepad RGB frontal">
+                  <img src="assets/mousepad-rgb.jpg" alt="Mousepad RGB frontal">
+                  <span class="thumb-caption">LED RGB</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('mousepad-goliath', 'assets/mousepad-detail.jpg', this)"
+                  onmouseover="trocarFoto('mousepad-goliath', 'assets/mousepad-detail.jpg', this)"
+                  title="Ver detalhe da textura micro-speed" aria-label="Ver textura do mousepad">
+                  <img src="assets/mousepad-detail.jpg" alt="Textura micro-speed">
+                  <span class="thumb-caption">Micro-Speed</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('mousepad-goliath', 'assets/mousepad-setup.jpg', this)"
+                  onmouseover="trocarFoto('mousepad-goliath', 'assets/mousepad-setup.jpg', this)"
+                  title="Ver mousepad completo no setup gamer" aria-label="Ver mousepad no setup">
+                  <img src="assets/mousepad-setup.jpg" alt="Mousepad no setup">
+                  <span class="thumb-caption">Setup XXL</span>
+                </button>
+              </div>
             </div>
             <div class="product-details">
               <h3 class="product-name">Mousepad Speed Goliath XXL</h3>
@@ -340,6 +410,34 @@
                 alt="Microfone Gamer Streamer Pro com shock mount" class="product-img" loading="lazy">
               <span class="product-tag">Áudio Gamer</span>
             </div>
+
+            <!-- Galeria de Fotos Reais do Produto -->
+            <div class="product-gallery-strip" aria-label="Galeria de fotos reais do Microfone">
+              <span class="gallery-label">Fotos Reais:</span>
+              <div class="gallery-thumbs">
+                <button type="button" class="gallery-thumb-btn active"
+                  onclick="trocarFoto('microfone-streamer', 'assets/microfone-gamer.jpg', this)"
+                  onmouseover="trocarFoto('microfone-streamer', 'assets/microfone-gamer.jpg', this)"
+                  title="Ver microfone com shock mount" aria-label="Ver microfone de estúdio">
+                  <img src="assets/microfone-gamer.jpg" alt="Microfone Streamer frontal">
+                  <span class="thumb-caption">Cardioide</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('microfone-streamer', 'assets/microfone-detail.jpg', this)"
+                  onmouseover="trocarFoto('microfone-streamer', 'assets/microfone-detail.jpg', this)"
+                  title="Ver cápsula condensadora e filtro pop" aria-label="Ver cápsula e shock mount">
+                  <img src="assets/microfone-detail.jpg" alt="Cápsula e filtro pop">
+                  <span class="thumb-caption">Shock Mount</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('microfone-streamer', 'assets/microfone-setup.jpg', this)"
+                  onmouseover="trocarFoto('microfone-streamer', 'assets/microfone-setup.jpg', this)"
+                  title="Ver microfone no braço articulado em estúdio" aria-label="Ver microfone no setup">
+                  <img src="assets/microfone-setup.jpg" alt="Microfone no setup">
+                  <span class="thumb-caption">Broadcast</span>
+                </button>
+              </div>
+            </div>
             <div class="product-details">
               <h3 class="product-name">Microfone Condensador Streamer Pro</h3>
               <p class="product-description">Captação cardioide cristalina com shock mount e filtro pop integrado.</p>
@@ -363,6 +461,34 @@
                 alt="Controle Sem Fio Trigger Elite para eSports" class="product-img" loading="lazy">
               <span class="product-tag">Controles</span>
             </div>
+
+            <!-- Galeria de Fotos Reais do Produto -->
+            <div class="product-gallery-strip" aria-label="Galeria de fotos reais do Controle">
+              <span class="gallery-label">Fotos Reais:</span>
+              <div class="gallery-thumbs">
+                <button type="button" class="gallery-thumb-btn active"
+                  onclick="trocarFoto('controle-elite', 'assets/controle-gamer.jpg', this)"
+                  onmouseover="trocarFoto('controle-elite', 'assets/controle-gamer.jpg', this)"
+                  title="Ver visão frontal ergonômica" aria-label="Ver controle frontal">
+                  <img src="assets/controle-gamer.jpg" alt="Controle frontal">
+                  <span class="thumb-caption">Grip Elite</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('controle-elite', 'assets/controle-triggers.jpg', this)"
+                  onmouseover="trocarFoto('controle-elite', 'assets/controle-triggers.jpg', this)"
+                  title="Ver gatilhos Hall Effect e botões de ação" aria-label="Ver gatilhos magnéticos">
+                  <img src="assets/controle-triggers.jpg" alt="Gatilhos magnéticos">
+                  <span class="thumb-caption">Hall Effect</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('controle-elite', 'assets/controle-setup.jpg', this)"
+                  onmouseover="trocarFoto('controle-elite', 'assets/controle-setup.jpg', this)"
+                  title="Ver controle na battlestation gamer" aria-label="Ver controle no setup">
+                  <img src="assets/controle-setup.jpg" alt="Controle no setup">
+                  <span class="thumb-caption">Battlestation</span>
+                </button>
+              </div>
+            </div>
             <div class="product-details">
               <h3 class="product-name">Controle Sem Fio Trigger Elite</h3>
               <p class="product-description">Gatilhos magnéticos de efeito Hall e ergonomia de competição.</p>
@@ -373,6 +499,210 @@
                 </div>
                 <button type="button" class="btn btn-secondary btn-icon" data-screen="simular"
                   title="Simular compra deste item" aria-label="Simular compra do Controle Trigger Elite">
+                  Simular
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 8: PC Gamer Elite Titan RTX 4080 -->
+          <article class="product-card" id="card-pc-gamer-titan" data-id="pc-gamer-titan">
+            <div class="product-image-container">
+              <img src="assets/pc-gamer.jpg" id="img-pc-gamer-titan"
+                alt="PC Gamer Elite Titan com gabinete aquário e iluminação RGB" class="product-img" loading="lazy">
+              <span class="product-tag">Computadores</span>
+            </div>
+
+            <!-- Galeria de Fotos Reais do Produto -->
+            <div class="product-gallery-strip" aria-label="Galeria de fotos reais do PC Gamer">
+              <span class="gallery-label">Fotos Reais:</span>
+              <div class="gallery-thumbs">
+                <button type="button" class="gallery-thumb-btn active"
+                  onclick="trocarFoto('pc-gamer-titan', 'assets/pc-gamer.jpg', this)"
+                  onmouseover="trocarFoto('pc-gamer-titan', 'assets/pc-gamer.jpg', this)"
+                  title="Ver gabinete aquário frontal" aria-label="Ver PC Gamer frontal">
+                  <img src="assets/pc-gamer.jpg" alt="PC Gamer aquário">
+                  <span class="thumb-caption">Gabinete</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('pc-gamer-titan', 'assets/pc-gamer-interior.jpg', this)"
+                  onmouseover="trocarFoto('pc-gamer-titan', 'assets/pc-gamer-interior.jpg', this)"
+                  title="Ver water cooler com LCD e componentes internos" aria-label="Ver interior do PC Gamer">
+                  <img src="assets/pc-gamer-interior.jpg" alt="Water cooler e placa mãe">
+                  <span class="thumb-caption">Interior LCD</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('pc-gamer-titan', 'assets/pc-gamer-setup.jpg', this)"
+                  onmouseover="trocarFoto('pc-gamer-titan', 'assets/pc-gamer-setup.jpg', this)"
+                  title="Ver PC Gamer na battlestation" aria-label="Ver setup com PC Gamer">
+                  <img src="assets/pc-gamer-setup.jpg" alt="Setup com PC Gamer">
+                  <span class="thumb-caption">Battlestation</span>
+                </button>
+              </div>
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">PC Gamer Elite Titan RTX 4080</h3>
+              <p class="product-description">Gabinete aquário com water cooler LCD, Intel Core i9 e 32GB DDR5.</p>
+              <div class="product-footer">
+                <div class="price-container">
+                  <span class="price-label">Preço oficial</span>
+                  <span class="product-price" id="preco-pc-gamer-titan">R$&nbsp;8.499,90</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular"
+                  title="Simular compra deste item" aria-label="Simular compra do PC Gamer Elite Titan">
+                  Simular
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 9: Notebook Gamer Predator Helios 16 -->
+          <article class="product-card" id="card-notebook-gamer-helios" data-id="notebook-gamer-helios">
+            <div class="product-image-container">
+              <img src="assets/notebook-gamer.jpg" id="img-notebook-gamer-helios"
+                alt="Notebook Gamer Predator Helios 16 aberto com tela 240Hz" class="product-img" loading="lazy">
+              <span class="product-tag">Notebooks</span>
+            </div>
+
+            <!-- Galeria de Fotos Reais do Produto -->
+            <div class="product-gallery-strip" aria-label="Galeria de fotos reais do Notebook Gamer">
+              <span class="gallery-label">Fotos Reais:</span>
+              <div class="gallery-thumbs">
+                <button type="button" class="gallery-thumb-btn active"
+                  onclick="trocarFoto('notebook-gamer-helios', 'assets/notebook-gamer.jpg', this)"
+                  onmouseover="trocarFoto('notebook-gamer-helios', 'assets/notebook-gamer.jpg', this)"
+                  title="Ver visão frontal com tela QHD 240Hz" aria-label="Ver Notebook Gamer aberto">
+                  <img src="assets/notebook-gamer.jpg" alt="Notebook Gamer frontal">
+                  <span class="thumb-caption">Tela 240Hz</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('notebook-gamer-helios', 'assets/notebook-teclado.jpg', this)"
+                  onmouseover="trocarFoto('notebook-gamer-helios', 'assets/notebook-teclado.jpg', this)"
+                  title="Ver teclado mecânico per-key RGB e touchpad de vidro" aria-label="Ver teclado do notebook">
+                  <img src="assets/notebook-teclado.jpg" alt="Teclado RGB mecânico">
+                  <span class="thumb-caption">Teclado RGB</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('notebook-gamer-helios', 'assets/notebook-setup.jpg', this)"
+                  onmouseover="trocarFoto('notebook-gamer-helios', 'assets/notebook-setup.jpg', this)"
+                  title="Ver notebook em uso no setup gamer" aria-label="Ver notebook no setup">
+                  <img src="assets/notebook-setup.jpg" alt="Notebook no setup">
+                  <span class="thumb-caption">Setup Portátil</span>
+                </button>
+              </div>
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">Notebook Gamer Predator Helios 16</h3>
+              <p class="product-description">Tela QHD 240Hz, Core i7, RTX 4070 e teclado mecânico per-key RGB.</p>
+              <div class="product-footer">
+                <div class="price-container">
+                  <span class="price-label">Preço oficial</span>
+                  <span class="product-price" id="preco-notebook-gamer-helios">R$&nbsp;7.299,90</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular"
+                  title="Simular compra deste item" aria-label="Simular compra do Notebook Gamer Predator">
+                  Simular
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 10: Placa de Vídeo GeForce RTX 4090 OC 24GB -->
+          <article class="product-card" id="card-gpu-rtx-4090" data-id="gpu-rtx-4090">
+            <div class="product-image-container">
+              <img src="assets/gpu-rtx.jpg" id="img-gpu-rtx-4090"
+                alt="Placa de Vídeo GeForce RTX 4090 OC com triplo fan e acabamento em titânio" class="product-img" loading="lazy">
+              <span class="product-tag">Placas de Vídeo</span>
+            </div>
+
+            <!-- Galeria de Fotos Reais do Produto -->
+            <div class="product-gallery-strip" aria-label="Galeria de fotos reais da Placa de Vídeo">
+              <span class="gallery-label">Fotos Reais:</span>
+              <div class="gallery-thumbs">
+                <button type="button" class="gallery-thumb-btn active"
+                  onclick="trocarFoto('gpu-rtx-4090', 'assets/gpu-rtx.jpg', this)"
+                  onmouseover="trocarFoto('gpu-rtx-4090', 'assets/gpu-rtx.jpg', this)"
+                  title="Ver triplo fan frontal com aletas de resfriamento" aria-label="Ver GPU triplo fan">
+                  <img src="assets/gpu-rtx.jpg" alt="GPU RTX 4090 frontal">
+                  <span class="thumb-caption">Triple Fan</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('gpu-rtx-4090', 'assets/gpu-backplate.jpg', this)"
+                  onmouseover="trocarFoto('gpu-rtx-4090', 'assets/gpu-backplate.jpg', this)"
+                  title="Ver backplate reforçado de titânio com fluxo térmico" aria-label="Ver backplate da GPU">
+                  <img src="assets/gpu-backplate.jpg" alt="Backplate reforçado">
+                  <span class="thumb-caption">Backplate</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('gpu-rtx-4090', 'assets/gpu-setup.jpg', this)"
+                  onmouseover="trocarFoto('gpu-rtx-4090', 'assets/gpu-setup.jpg', this)"
+                  title="Ver placa de vídeo GeForce RTX em perspectiva com iluminação gamer" aria-label="Ver placa de vídeo GeForce RTX">
+                  <img src="assets/gpu-setup.jpg" alt="Placa de vídeo GeForce RTX">
+                  <span class="thumb-caption">GeForce RTX</span>
+                </button>
+              </div>
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">Placa de Vídeo GeForce RTX 4090 OC 24GB</h3>
+              <p class="product-description">Arquitetura Ada Lovelace, triplo fan axial com backplate de titânio.</p>
+              <div class="product-footer">
+                <div class="price-container">
+                  <span class="price-label">Preço oficial</span>
+                  <span class="product-price" id="preco-gpu-rtx-4090">R$&nbsp;12.999,90</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular"
+                  title="Simular compra deste item" aria-label="Simular compra da Placa de Vídeo RTX 4090">
+                  Simular
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 11: Volante Gamer Apex Force Feedback Pro + Pedais -->
+          <article class="product-card" id="card-volante-force-gt" data-id="volante-force-gt">
+            <div class="product-image-container">
+              <img src="assets/volante-gamer.jpg" id="img-volante-force-gt"
+                alt="Volante Gamer Apex Force Feedback Pro com aro em couro e paddle shifters" class="product-img" loading="lazy">
+              <span class="product-tag">Volantes & Simuladores</span>
+            </div>
+
+            <!-- Galeria de Fotos Reais do Produto -->
+            <div class="product-gallery-strip" aria-label="Galeria de fotos reais do Volante Gamer">
+              <span class="gallery-label">Fotos Reais:</span>
+              <div class="gallery-thumbs">
+                <button type="button" class="gallery-thumb-btn active"
+                  onclick="trocarFoto('volante-force-gt', 'assets/volante-gamer.jpg', this)"
+                  onmouseover="trocarFoto('volante-force-gt', 'assets/volante-gamer.jpg', this)"
+                  title="Ver aro D-shape em couro com LEDs de rotação" aria-label="Ver Volante Gamer frontal">
+                  <img src="assets/volante-gamer.jpg" alt="Volante Gamer frontal">
+                  <span class="thumb-caption">Direct Drive</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('volante-force-gt', 'assets/volante-pedais.jpg', this)"
+                  onmouseover="trocarFoto('volante-force-gt', 'assets/volante-pedais.jpg', this)"
+                  title="Ver pedaleira com embreagem, freio load-cell e acelerador" aria-label="Ver pedais metálicos">
+                  <img src="assets/volante-pedais.jpg" alt="Pedaleira metálica">
+                  <span class="thumb-caption">Pedais Load-Cell</span>
+                </button>
+                <button type="button" class="gallery-thumb-btn"
+                  onclick="trocarFoto('volante-force-gt', 'assets/volante-setup.jpg', this)"
+                  onmouseover="trocarFoto('volante-force-gt', 'assets/volante-setup.jpg', this)"
+                  title="Ver cockpit de simulação completo em ação" aria-label="Ver volante no cockpit">
+                  <img src="assets/volante-setup.jpg" alt="Cockpit de simulação">
+                  <span class="thumb-caption">Cockpit Sim</span>
+                </button>
+              </div>
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">Volante Gamer Apex Force Pro + Pedais</h3>
+              <p class="product-description">Direct Drive dual motor, aro em couro D-shape e 3 pedais metálicos load-cell.</p>
+              <div class="product-footer">
+                <div class="price-container">
+                  <span class="price-label">Preço oficial</span>
+                  <span class="product-price" id="preco-volante-force-gt">R$&nbsp;1.899,90</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-icon" data-screen="simular"
+                  title="Simular compra deste item" aria-label="Simular compra do Volante Gamer Apex Pro">
                   Simular
                 </button>
               </div>
@@ -729,8 +1059,8 @@
 
       <div class="footer-bottom">
         <div class="footer-academic-info">
-          <p><strong>Projeto desenvolvido por:</strong> Luã Hayalla Oliveira Silva</p>
-          <p>Técnico em Desenvolvimento de Sistemas — Trilhas | Trilha: Lógica de Programação com JavaScript</p>
+          <p><strong>Projeto desenvolvido Mobile por:</strong> Luã Hayalla Oliveira Silva</p>
+          <p> Desenvolvimento de Sistemas Mobile  — Trilhas | Trilha Mobile: Lógica de Programação com JavaScript</p>
           <p>Desafio 1 — Minha Loja: Simulador de Compras | Ano acadêmico: 2026</p>
         </div>
         <p class="footer-copy">

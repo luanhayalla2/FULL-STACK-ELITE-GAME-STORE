@@ -4,6 +4,10 @@
  */
 
 import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 import cors from 'cors';
 import produtosRouter from './routes/produtos.js';
 import comprasRouter from './routes/compras.js';
@@ -12,7 +16,6 @@ import pagamentoRouter from '../routes/pagamento.js';
 
 
 const app = express();
-app.use('/api/pagamento', pagamentoRouter);
 const PORT = process.env.PORT || 3002;
 
 // Configuração de CORS - Permite integração local transparente com o front-end
@@ -59,6 +62,19 @@ app.get('/api/health', (req, res) => {
 app.use('/api/produtos', produtosRouter);
 app.use('/api/compras', comprasRouter);
 app.use('/api/pedidos', pedidosRouter);
+app.use('/api/pagamento', pagamentoRouter);
+
+// Serve static frontend files
+app.use(express.static(path.join(__dirname, '../../frontend')));
+
+// Fallback to index.html for client‑side routing (except API routes)
+app.get('*', (req, res) => {
+  if (!req.path.startsWith('/api/')) {
+    res.sendFile(path.join(__dirname, '../../frontend', 'index.html'));
+  } else {
+    res.status(404).json({ sucesso: false, codigo: 'ROTA_NAO_ENCONTRADA', mensagem: `A rota "${req.method} ${req.originalUrl}" não foi encontrada no servidor.` });
+  }
+});
 
 // Tratamento de rota não encontrada (404)
 app.use((req, res) => {

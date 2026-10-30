@@ -1,0 +1,28 @@
+{
+  "name": "full-stack-elite-game-store",
+  "version": "1.0.0",
+  "description": "Elite Game Store — Simulador de Compras Oficial Full Stack",
+  "type": "module",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "dev": "node --watch backend/src/server.js",
+    "test": "node backend/test/simulacao.test.js"
+  },
+  "keywords": [
+    "trilhas",
+    "javascript",
+    "express",
+    "ecommerce",
+    "gamer",
+    "vercel"
+  ],
+  "author": "Luã Hayalla Oliveira Silva",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "stripe": "^23.0.1"
+  }
+}
+
